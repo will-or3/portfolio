@@ -1,0 +1,106 @@
+# William Arnold
+
+**Freshman at [REDACTED] High School | Aspiring Cybersecurity Researcher & Systems Programmer**
+
+I enjoy exploring low-level systems, reverse engineering, and capture-the-flag challenges. My goal is to push system-level operations conceptually and understand software and hardware mechanics.
+
+---
+
+## Skills
+
+**Programming:** C, ASM(basic for ctf's), Python  
+**Cybersecurity:** Binary Exploitation (CTFs), Malware Analysis (sandboxed experiments), Reverse Engineering (Ghidra, small binaries)  
+**Tools & Environments:** Linux, Windows, Ghidra, GDB, Git
+
+---
+
+## Depth Project: Windows USB System Automation & Drive Interaction
+[-> GitHub Repo <-](https://github.com/will-or3/evil_game)
+
+**Note:** The following is strictly conceptual. The code was never intended to be compiled; compilation requires a specialized environment. Isolation required.
+
+**TL;DR:** Converted a comedic Python program into C to conceptually explore system-level Windows automation, disk interaction, and USB monitoring.
+
+**What I learned / explored:**
+- Windows API usage, privilege checking
+- Kernel-adjacent disk interaction
+- System automation via `schtask` & `winevt.h`
+- Disk monitoring (`GetLogicalDrives`, `GetDiskFreeSpaceEx`)
+- Disk interaction using `DeviceIoControl`, `ntdddisk.h`, `winioctl.h`
+
+**Highlighted Snippets:**
+
+**1. Disk Interaction (Kernel-Adjacent I/O)**  
+Demonstrated direct disk access using Windows API to read/write raw drives conceptually while bypassing caching.
+```c
+HANDLE hDisk = CreateFileA(
+            disk_path,
+            GENERIC_READ | GENERIC_WRITE,
+            FILE_SHARE_READ | FILE_SHARE_WRITE,
+            NULL, 
+            OPEN_EXISTING,
+            FILE_FLAG_NO_BUFFERING | FILE_FLAG_WRITE_THROUGH,
+            0
+        );
+        if (hDisk == INVALID_HANDLE_VALUE) continue;
+```
+2. Admin Check
+Verify administrator privileges and conditionally execute self-deletion.
+```c
+bool admin_check() {
+    BOOL is_admin = FALSE;
+    PSID admin_group = NULL;
+    if (ConvertStringSidToSidA("S-1-5-32-544", &admin_group)) {
+        if (!CheckTokenMembership(NULL, admin_group, &is_admin)) {
+            is_admin = FALSE;
+        }
+        LocalFree(admin_group);
+    }
+}
+if (!is_admin) {
+    self_del()
+}
+```
+3. USB Detection & Conditional Trigger
+Detect USB drives and execute conceptual actions if the drive exceeds a 4GB threshold.
+
+```c
+void check_usb_threshold(ULONGLONG threshold) {
+    for (int b = 0; b < 26; b++) {
+            if (drive_mask & (1 << b)) {
+                wchar_t drive[4] = {L'A' + b, L':', L'\\', L'\0'};
+                ULONGLONG used = used_space_drive(drive);
+            if (used >= threshold) {
+                payload();
+                break;
+            }
+        }
+    }
+}
+```
+## Breadth Project: Defensive Mitigations for Vulnerable Software
+
+**Overview:**  
+Even well-tested software can contain vulnerabilities. This project explores defensive strategies that protect software **without modifying the original vulnerable code**
+
+**Key Learning Areas:**
+
+- **Understanding how attackers exploit vulnerabilities**, such as:  
+  - Stack-based buffer overflows  
+  - Use-after-free errors  
+  - Format string vulnerabilities
+
+- **Exploring defensive mitigation techniques**:  
+  - Pointer obfuscation  
+  - Runtime integrity checks  
+  - Anti-debug / anti-tamper methods (sandboxed VM experiments only)  
+  - Pre-runtime obfuscation / encryption  
+  - Checksum and hash verification for critical data
+
+
+Contact
+Primary (public): will.or3@proton.me
+
+Professional:[REDACTED]
+
+GitHub: github.com/will-or3
