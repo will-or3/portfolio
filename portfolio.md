@@ -22,7 +22,7 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 ## Depth Project: Windows USB System Automation & Drive Interaction
 [-> GitHub Repo <-](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c)
 
-**Note:** The following is strictly conceptual. The code was never intended to be compiled; compilation requires a specialized environment. Isolation required.
+**Note:** Developed and tested within a secure, isolated VM environment to explore advanced kernel-adjacent system mechanics.
 
 **TL;DR:** Converted a comedic Python program into C to conceptually explore system-level Windows automation, disk interaction, and USB monitoring.
 
