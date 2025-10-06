@@ -12,10 +12,15 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 **Cybersecurity:** Binary Exploitation (CTFs), Malware Analysis (sandboxed experiments), Reverse Engineering (Ghidra, small binaries)  
 **Tools & Environments:** Linux, Windows, Ghidra, GDB, Git
 
+| Project | Skills |
+|:-------:|:------:|
+| [Windows USB System Automation & Drive Interaction](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c) | C, WinApi, kvm/qemu, malware analysis |
+| ctf Writeups | ghidra, gdb/gef Binary Exploitation |
 ---
 
+
 ## Depth Project: Windows USB System Automation & Drive Interaction
-[-> GitHub Repo <-](https://github.com/will-or3/evil_game)
+[-> GitHub Repo <-](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c)
 
 **Note:** The following is strictly conceptual. The code was never intended to be compiled; compilation requires a specialized environment. Isolation required.
 
