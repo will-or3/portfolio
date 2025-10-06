@@ -1,6 +1,6 @@
 # William Arnold
 
-**Freshman at [REDACTED] High School | Aspiring Cybersecurity Researcher & Systems Programmer**
+**Freshman at Rio Rancho High School | Aspiring Cybersecurity Researcher & Systems Programmer**
 
 I enjoy exploring low-level systems, reverse engineering, and capture-the-flag challenges. My goal is to push system-level operations conceptually and understand software and hardware mechanics.
 
@@ -101,6 +101,6 @@ Even well-tested software can contain vulnerabilities. This project explores def
 Contact
 Primary (public): will.or3@proton.me
 
-Professional:[REDACTED]
+Professional:[Contact_Me]
 
 GitHub: github.com/will-or3
