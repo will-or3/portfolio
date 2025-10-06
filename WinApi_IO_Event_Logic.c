@@ -14,6 +14,7 @@
 // this is a sanatized version of a poc destructive script
 // its safe, but I would still recommend running in a vm
 // because of "<ntdddisk.h>" it requires MSVSC
+// original version hosted at https://github.com/will-or3/evil_game/blob/main/evil_game_v3.c
 
 // only run if user is admin
 bool admin_check() {
