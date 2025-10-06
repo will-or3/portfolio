@@ -14,7 +14,7 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 
 | Project | Skills |
 |:-------:|:------:|
-| [Windows USB System Automation & Drive Interaction](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c) | C, WinApi, kvm/qemu, malware analysis |
+| [Windows USB System Automation & Drive Interaction](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c) | C, WinApi, Kernel-adjacent disk interaction,, malware analysis |
 | ctf Writeups | ghidra, gdb/gef, stack based buffer/integer overflows (no rop yet)|
 ---
 
