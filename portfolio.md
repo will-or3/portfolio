@@ -105,6 +105,6 @@ Even well-tested software can contain vulnerabilities. This project explores def
 Contact
 Primary (public): will.or3@proton.me
 
-Professional:[Contact Me :)]
+Professional:[Contact Me]
 
 GitHub: github.com/will-or3
