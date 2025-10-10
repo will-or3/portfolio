@@ -18,7 +18,8 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 
 **Note:** Developed and tested within a secure, isolated VM environment to explore advanced kernel-adjacent system mechanics.
 
-**Goal:** To explore advanced system mechanics by creating a C script that moniters & interacts with removable drives at kernel-adjacent level, bypassing standard file-system
+**Goal:** To explore low-level Windows API, Implemeting a C tool that moniters and interacts with removable & non-removable storage devices via "DeviceIoControl", direct kernel-adjacent physical disk access
+
 **What I learned / explored:**
 - Windows API usage, privilege checking
 - Kernel-adjacent disk interaction
