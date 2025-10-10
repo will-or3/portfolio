@@ -6,18 +6,11 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 
 ---
 
-## Skills
+## Tech Skills
 
-**Programming:** C, ASM(basic for ctf's), Python  
-**Cybersecurity:** Binary Exploitation (CTFs), Malware Analysis (sandboxed experiments), Reverse Engineering (Ghidra, small binaries)  
+**Programming:** C, Python, ASM (x86/64 basics for CTF's)  
+**Cybersecurity:** Binary Exploitation (CTFs, gdb/gef), Malware Analysis (sandboxed experiments), Reverse Engineering (Ghidra, small binaries) 
 **Tools & Environments:** Linux, Windows, Ghidra, GDB, Git
-
-| Project | Skills |
-|:-------:|:------:|
-| [Windows USB System Automation & Drive Interaction](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c) | C, WinApi, Kernel-adjacent disk interaction,, malware analysis |
-| ctf Writeups | ghidra, gdb/gef, stack based buffer/integer overflows (no rop yet)|
-| Binary exp defensive | stack based buffer overflow, UAF(simple), Defensive techniques |
----
 
 
 ## Depth Project: Windows USB System Automation & Drive Interaction
@@ -25,6 +18,7 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 
 **Note:** Developed and tested within a secure, isolated VM environment to explore advanced kernel-adjacent system mechanics.
 
+**Goal:** To explore advanced system mechanics by creating a C script that moniters & interacts with removable drives at kernel-adjacent level, bypassing standard file-system
 **What I learned / explored:**
 - Windows API usage, privilege checking
 - Kernel-adjacent disk interaction
@@ -97,7 +91,7 @@ Even well-tested software can contain vulnerabilities. This project explores def
 - **Exploring defensive mitigation techniques**:  
   - Pointer obfuscation  
   - Runtime integrity checks  
-  - Anti-debug / anti-tamper methods (sandboxed VM experiments only)  
+  - Anti-debug / anti-tamper methods
   - Pre-runtime obfuscation / encryption  
   - Checksum and hash verification for critical data
 
