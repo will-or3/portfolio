@@ -102,9 +102,6 @@ Even well-tested software can contain vulnerabilities. This project explores def
   - Checksum and hash verification for critical data
 
 
-Contact
-Primary (public): will.or3@proton.me
-
-Professional:[Contact Me]
-
+### Contact
+Email: will.or3@proton.me
 GitHub: github.com/will-or3
