@@ -25,8 +25,6 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 
 **Note:** Developed and tested within a secure, isolated VM environment to explore advanced kernel-adjacent system mechanics.
 
-**TL;DR:** Converted a comedic Python program into C to conceptually explore system-level Windows automation, disk interaction, and USB monitoring.
-
 **What I learned / explored:**
 - Windows API usage, privilege checking
 - Kernel-adjacent disk interaction
