@@ -10,7 +10,7 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 
 **Programming:** C, Python, ASM (x86/64 basics for CTF's)  
 **Cybersecurity:** Binary Exploitation (CTFs, gdb/gef), Malware Analysis (sandboxed experiments), Reverse Engineering (Ghidra, small binaries) 
-**Tools & Environments:** Linux, Windows, Ghidra, GDB, Git
+**Tools & Environments:** Linux, Windows, Ghidra, GDB?GEF
 
 
 ## Depth Project: Windows USB System Automation & Drive Interaction
