@@ -13,8 +13,6 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 **Tools & Environments:** Linux, Windows, Ghidra, GDB?GEF
 
 
-<details>
-<summary><strong>Depth Project: Windows USB System Automation & Drive Interaction</strong></summary>
 ## Depth Project: Windows USB System Automation & Drive Interaction
 [-> GitHub Repo <-](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c)
 
@@ -106,7 +104,6 @@ void check_usb_threshold(ULONGLONG threshold) {
     }
 }
 ```
-</details>
 # Future awaits
 
 
