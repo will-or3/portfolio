@@ -19,7 +19,7 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 **Environment:** Windows 10 vm  
 **Language:** C  
 **Focus Areas:** Windows API, Disk I/O, Privilege Handling, Event-Driven Systems 
----
+
 ## Overveiw
 
 This project explores how userland applications can interact with **kernel-managed-disk systems** using low-level Windows APIs/
