@@ -1,6 +1,6 @@
 # William Arnold
 
-**Freshman at Rio Rancho High School | Aspiring Cybersecurity Researcher & Systems Programmer**
+**Freshman at Rio Rancho High School | building low-level tooling and exploring binary exploitation, reverse engineering, and kernel systems.**
 
 I enjoy exploring low-level systems, reverse engineering, and capture-the-flag challenges. My goal is to push system-level operations conceptually and understand software and hardware mechanics.
 
