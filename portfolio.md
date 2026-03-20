@@ -16,18 +16,46 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 ## Depth Project: Windows USB System Automation & Drive Interaction
 [-> GitHub Repo <-](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c)
 
-**Note:** Developed and tested within a secure, isolated VM environment to explore advanced kernel-adjacent system mechanics.
+**Environment:** Windows 10 vm  
+**Language:** C  
+**Focus Areas:** Windows API, Disk I/O, Privilege Handling, Event-Driven Systems 
 
-**Goal:** To explore low-level Windows API, Implemeting a C tool that moniters and interacts with removable & non-removable storage devices via "DeviceIoControl", direct kernel-adjacent physical disk access
+---
+## Overveiw
 
-**What I learned / explored:**
-- Windows API usage, privilege checking
-- Kernel-adjacent disk interaction
-- System automation via `schtask` & `winevt.h`
-- Disk monitoring (`GetLogicalDrives`, `GetDiskFreeSpaceEx`)
-- Disk interaction using `DeviceIoControl`, `ntdddisk.h`, `winioctl.h`
+This project explores how userland applications can interact with **kernel-managed-disk systems** using low-level Windows APIs/
 
-**Highlighted Snippets:**
+the tool monitors system drives, evaluates conditions (storage thresholds), & interactions with physical disks via 'DeviceIoControl'
+
+Goals:
+- How Windows exposes disk level operations to User level apis
+- How event driven logic can be applied to system level programming
+- Limitations of Userland programs
+
+## System Architecture
+```text
+Drive Detection -> Privilege Check -> Disk Evaluation -> Conditional Trigger -> Low-Level Disk Access
+```
+## Components
+- Drive Detection
+    uses `GetLogicalDrives` to enumeraate available storage devices
+- Privilege check
+    Verifies admin privs before performing sensitive operations.
+- Disk evaluation
+    measures disk usage via `GetDiskFreeSpaceEx` & compares against threshold
+- Conditional trigger
+    Executes logic when specific conditions are met (threshold exceeded)
+- Low-Level Disk Access
+    Interacts with physical drives useing `CreateFile` & `DeviceIoControl`
+
+## Quick featues:
+- Event-driven disk monitoring
+- Admin Privilege validation
+- Conditional system automation
+- Raw disk handle acquisition using Windows API
+- controlled experimentation with low-level I/O Operations
+
+**Technical Highlights:**
 
 **1. Disk Interaction (Kernel-Adjacent I/O)**  
 Demonstrated direct disk access using Windows API to read/write raw drives conceptually while bypassing caching.
@@ -77,7 +105,7 @@ void check_usb_threshold(ULONGLONG threshold) {
     }
 }
 ```
-# next goes here
+# Future awaits
 
 
 ### Contact
