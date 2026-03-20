@@ -13,7 +13,7 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 **Tools & Environments:** Linux, Windows, Ghidra, GDB?GEF
 
 
-## Depth Project: Windows USB System Automation & Drive Interaction
+## Windows USB System Automation & Drive Interaction
 [-> GitHub Repo <-](https://github.com/will-or3/portfolios/blob/main/WinApi_IO_Event_Logic.c)
 
 **Environment:** Windows 10 vm  
