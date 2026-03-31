@@ -10,7 +10,7 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 
 **Programming:** C, Python, ASM (x86/64 basics for CTF's)  
 **Cybersecurity:** Binary Exploitation (CTFs, gdb/gef), Malware Analysis (sandboxed experiments), Reverse Engineering (Ghidra, small binaries) 
-**Tools & Environments:** Linux, Windows, Ghidra, GDB?GEF
+**Tools & Environments:** Linux, Windows, Ghidra, GDB/GEF
 
 
 ## Windows USB System Automation & Drive Interaction
@@ -22,30 +22,33 @@ I enjoy exploring low-level systems, reverse engineering, and capture-the-flag c
 
 ## Overveiw
 
-This project explores how userland applications can interact with **kernel-managed-disk systems** using low-level Windows APIs/
+This project explores how userland applications can interact with **kernel-managed disk systems** using low-level Windows APIs/
 
 the tool monitors system drives, evaluates conditions (storage thresholds), & interactions with physical disks via 'DeviceIoControl'
 
-Goals:
-- How Windows exposes disk level operations to User level apis
-- How event driven logic can be applied to system level programming
+### Goals:
+- Understand How Windows exposes disk level operations to User-mode programs
+- Apply event-driven logic to system-level workflows
 - Limitations of Userland programs
 
 ## System Architecture
 ```text
-Drive Detection -> Privilege Check -> Disk Evaluation -> Conditional Trigger -> Low-Level Disk Access
+Drive Detection -> Privilege Check -> Disk Evaluation -> Conditional Trigger -> Raw Device Interface
 ```
-## Components
-- Drive Detection
-    uses `GetLogicalDrives` to enumeraate available storage devices
-- Privilege check
-    Verifies admin privs before performing sensitive operations.
-- Disk evaluation
-    measures disk usage via `GetDiskFreeSpaceEx` & compares against threshold
-- Conditional trigger
-    Executes logic when specific conditions are met (threshold exceeded)
-- Low-Level Disk Access
-    Interacts with physical drives useing `CreateFile` & `DeviceIoControl`
+
+## Key Concepts Demonstrated
+
+- Userland vs Kernel Boundaries
+    Understaing how Windows mediates access to hardware through system APIs
+
+- Raw Device Access
+    Working with `\\.PhysicalDriveX` handles under OS constraints
+
+- Event-Driven Design
+    Triggering behavior based on system state (drive conditionals)
+
+- Low-Level I/O Constraints
+    Buffer alignment, unbuffered I/O, and system limitations 
 
 ## Quick featues:
 - Event-driven disk monitoring
@@ -57,7 +60,7 @@ Drive Detection -> Privilege Check -> Disk Evaluation -> Conditional Trigger -> 
 **Technical Highlights:**
 
 **1. Disk Interaction (Kernel-Adjacent I/O)**  
-Demonstrated direct disk access using Windows API to read/write raw drives conceptually while bypassing caching.
+Demonstrates how Windows allows user-mode programs to interface with physical drives through controlled APIs, including handling unbuffered I/O and alignment constraints.
 ```c
 HANDLE hDisk = CreateFileA(
             disk_path,
@@ -97,7 +100,7 @@ void check_usb_threshold(ULONGLONG threshold) {
                 wchar_t drive[4] = {L'A' + b, L':', L'\\', L'\0'};
                 ULONGLONG used = used_space_drive(drive);
             if (used >= threshold) {
-                payload();
+                triggered_operation();
                 break;
             }
         }
